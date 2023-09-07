@@ -1,0 +1,38 @@
+html, body {
+    height:100%;
+} 
+
+body {
+    background-color: white;
+    background-image: url('/images/starwars1.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /*font-family: 'Roboto', sans-serif;*/
+    font-weight: 400;
+    color: yellow;
+}
+
+#🚀{
+    font-size: 4em;
+    color: yellow;
+    text-shadow: 2px 2px 2px black;
+}
+
+.form-section{
+    background-color: azure;
+}
+
+label {
+    display: block;
+}
+/*
+.demo{
+    background-color: fuchsia;
+    float: right;
+    width: 300px;
+}
+*/
