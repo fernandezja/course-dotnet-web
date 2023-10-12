@@ -23,8 +23,19 @@ app.UseAuthorization();
 
 
 app.MapControllerRoute(
+        name: "usuario-buscar-demo1",
+        pattern: "usuarios/images/img-{name}.jpg",
+        defaults: new { controller = "Usuario", action = "Buscar" });
+
+app.MapControllerRoute(
+        name: "usuario-buscar-demo1",
+        pattern: "u-{name}.html",
+        defaults: new { controller = "Usuario", action = "Buscar" });
+
+
+app.MapControllerRoute(
         name: "usuario-buscar",
-        pattern: "usuario/{nombre}",
+        pattern: "usuario/{name}",
         defaults: new { controller = "Usuario", action = "Buscar" });
 
 app.MapControllerRoute(

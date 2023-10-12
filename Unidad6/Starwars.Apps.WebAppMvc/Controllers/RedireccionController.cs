@@ -10,17 +10,10 @@ namespace Starwars.Apps.WebAppMvc.Controllers
         public IActionResult Index(string id)
         {
             return RedirectToAction(controllerName: "Usuario",
-                                    actionName: "Buscar", 
+                                    actionName: "Buscar",
                                     routeValues: new { nombre = id });
 
         }
 
-        //public IActionResult Index(string id)
-        //{
-        //    return RedirectToAction(controllerName: "Usuario",
-        //                            actionName: "Buscar",
-        //                            routeValues: new { nombre = id });
-
-        //}
     }
 }
