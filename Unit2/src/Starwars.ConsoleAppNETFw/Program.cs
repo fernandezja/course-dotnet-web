@@ -11,7 +11,7 @@ namespace Starwars.ConsoleAppNETFw
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Console APP NET 7");
+            Console.WriteLine("Console APP NET Framework");
 
             var negocio = new StarwarsNegocio();
             var saludo = negocio.Saludar("Yoda");
