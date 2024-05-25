@@ -49,12 +49,17 @@ namespace Starwars.WebApp
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            
-
+            Application["demoApp"] = txtName.Text;
+            Session["demo1"] = txtName.Text;
+            ViewState["demo2"] = txtName.Text;
         }
 
         protected void Unnamed3_Click(object sender, EventArgs e)
         {
+            var demoApp = Application["demoApp"];
+            var demo1 = Session["demo1"];
+            var demo2 = ViewState["demo2"];
+
             Label1.Text = $"{txtName.Text} {DropDownList1.SelectedItem.Value}";
         }
     }

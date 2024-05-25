@@ -12,6 +12,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            HTML normal
+            <input type="text" name="txtName" id="Text1" />
+
+            Html Control:
             <input type="text" name="txtName" id="txtName" runat="server" />
             <input type="text" name="txtEmail" id="txtEmail" runat="server" />
 
