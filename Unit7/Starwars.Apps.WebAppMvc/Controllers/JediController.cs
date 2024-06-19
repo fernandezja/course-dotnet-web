@@ -6,8 +6,8 @@ namespace Starwars.Apps.WebAppMvc.Controllers
 {
     public class JediController : Controller
     {
-        private StarwarsConfig _starwarsConfig;
-        private JediBusiness _jediBusiness;
+        private readonly StarwarsConfig _starwarsConfig;
+        private readonly JediBusiness _jediBusiness;
 
 
         public JediController(StarwarsConfig starwarsConfig,
@@ -24,14 +24,23 @@ namespace Starwars.Apps.WebAppMvc.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var jedis = _jediBusiness.GetAll();
+
+            return View(model:jedis);
         }
 
+        [Route("superdetail/jedi-{id}.html")]
         public IActionResult Details(int id)
         {
             //TODO: Validar parametros
 
-            var jedi = _jediBusiness.Get(id);
+            //var jedi = _jediBusiness.Get(id);
+
+            var jedis = _jediBusiness.GetAll();
+
+            var jedi = (from j in jedis
+                        where j.JediId == id
+                        select j).FirstOrDefault();
 
             /*
             var jedi = new Jedi() {

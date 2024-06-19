@@ -14,9 +14,11 @@ namespace Starwars.Apps.WebAppMvc
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            //var starwarsConnectionString = builder.Configuration.GetSection("ConnectionStrings:StarwarsConnectionString");
+            var starwarsConnectionString = builder.Configuration.GetConnectionString("StarwarsConnectionString");
 
             var starwarsConfig = new StarwarsConfig() {
-                StarwarsConnectionString = "Persist Security Info=True;Initial Catalog=Starwars;Data Source=.; Integrated Security=True;TrustServerCertificate=True;"
+                StarwarsConnectionString = starwarsConnectionString
             };
 
             //builder.Services.AddSingleton

@@ -24,7 +24,7 @@ namespace Starwars.Core.DataADONet
 
             var jedis = new List<Jedi>();
 
-            const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, Name, Height, Created, Edited FROM dbo.Jedi";
+            const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, FirstName, LastName, Email FROM dbo.Jedi";
             //const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, Name, Height, Created, Edited FROM dbo.Jedi WHERE Name LIKE '%'+@Name+'%'";
 
 
@@ -50,11 +50,14 @@ namespace Starwars.Core.DataADONet
                         var nameDemo2 = reader.GetString(1);
 
                         jedi.JediId = reader.GetInt32(0);
-                        jedi.Name = reader[1].ToString();
+                        jedi.FirstName = reader[1].ToString();
+                        jedi.LastName = reader[2].ToString();
+                        jedi.Email = reader[3].ToString();
+                        /*
                         jedi.Height = reader.GetInt32(2); //Null
                         jedi.Created = reader.GetDateTime(3);
                         jedi.Created = reader.GetDateTime(4);
-
+                        */
 
                         jedis.Add(jedi);
                     }
@@ -101,10 +104,10 @@ namespace Starwars.Core.DataADONet
                     {
                         var jedi = new Jedi();
                         jedi.JediId = reader.GetInt32(0);
-                        jedi.Name = reader[1].ToString();
-                        jedi.Height = reader.GetInt32(2); //Null
-                        jedi.Created = reader.GetDateTime(3);
-                        jedi.Created = reader.GetDateTime(4);
+                        //jedi.Name = reader[1].ToString();
+                        //jedi.Height = reader.GetInt32(2); //Null
+                        //jedi.Created = reader.GetDateTime(3);
+                        //jedi.Created = reader.GetDateTime(4);
 
                         jedis.Add(jedi);
                     }
@@ -159,10 +162,10 @@ namespace Starwars.Core.DataADONet
                     {
                         var jedi = new Jedi();
                         jedi.JediId = reader.GetInt32(0);
-                        jedi.Name = reader[1].ToString();
-                        jedi.Height = reader.GetInt32(2); //Null
-                        jedi.Created = reader.GetDateTime(3);
-                        jedi.Created = reader.GetDateTime(4);
+                        //jedi.Name = reader[1].ToString();
+                        //jedi.Height = reader.GetInt32(2); //Null
+                        //jedi.Created = reader.GetDateTime(3);
+                        //jedi.Created = reader.GetDateTime(4);
 
                         jedis.Add(jedi);
                     }
@@ -218,10 +221,10 @@ namespace Starwars.Core.DataADONet
                     {
                         
                         jedi.JediId = reader.GetInt32(0);
-                        jedi.Name = reader[1].ToString();
-                        jedi.Height = reader.GetInt32(2); //Null
-                        jedi.Created = reader.GetDateTime(3);
-                        jedi.Edited = reader.GetDateTime(4);
+                        //jedi.Name = reader[1].ToString();
+                        //jedi.Height = reader.GetInt32(2); //Null
+                        //jedi.Created = reader.GetDateTime(3);
+                        //jedi.Edited = reader.GetDateTime(4);
 
                         
                     }
