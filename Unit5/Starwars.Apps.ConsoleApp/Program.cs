@@ -25,40 +25,40 @@ var jedis1 = jediBusiness.GetAll();
 
 Console.WriteLine($"[GetAll] Jedis Total = {jedis1.Count()}");
 
-/*
-foreach (var j in jedis)
+
+foreach (var j in jedis1)
 {
     Console.WriteLine($" |_ {j.Name}");
 }
-*/
+
 
 PrintLine();
 
 
-var filter = new JediFilter() { 
-                Name = "0001" 
-             };
+//var filter = new JediFilter() { 
+//                Name = "0001" 
+//             };
 
-var jedis2 = jediBusiness.Search(filter);
+//var jedis2 = jediBusiness.Search(filter);
 
-Console.WriteLine($"[Search] Jedis with a name contain \"0001\" Total = {jedis2.Count()}");
+//Console.WriteLine($"[Search] Jedis with a name contain \"0001\" Total = {jedis2.Count()}");
 
-foreach (var j in jedis2)
-{
-    Console.WriteLine($" |_ {j.Name}");
-}
+//foreach (var j in jedis2)
+//{
+//    Console.WriteLine($" |_ {j.Name}");
+//}
 
 PrintLine();
 
 
-var jedis3 = jediBusiness.SearchWithStoreProcedure(filter);
+//var jedis3 = jediBusiness.SearchWithStoreProcedure(filter);
 
-Console.WriteLine($"[SearchWithStoreProcedure] Jedis with a name contain \"0001\" Total = {jedis3.Count()}");
+//Console.WriteLine($"[SearchWithStoreProcedure] Jedis with a name contain \"0001\" Total = {jedis3.Count()}");
 
-foreach (var j in jedis3)
-{
-    Console.WriteLine($" |_ {j.Name}");
-}
+//foreach (var j in jedis3)
+//{
+//    Console.WriteLine($" |_ {j.Name}");
+//}
 
 PrintLine();
 

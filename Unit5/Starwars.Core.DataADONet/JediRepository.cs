@@ -11,7 +11,7 @@ namespace Starwars.Core.DataADONet
         private StarwarsConfig _starwarsConfig;
 
         //string connectionString =
-        //            "Persist Security Info=True;Initial Catalog=CursoNETWeb;Data Source=.; Integrated Security=True;TrustServerCertificate=True;";
+        //            "Persist Security Info=True;Initial Catalog=Starwars;Data Source=.; Integrated Security=True;TrustServerCertificate=True;";
 
 
 
@@ -24,14 +24,19 @@ namespace Starwars.Core.DataADONet
 
             var jedis = new List<Jedi>();
 
-            const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, Name, Height, Created, Edited FROM dbo.Jedi";
+            const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, Name FROM dbo.Jedi";
             //const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, Name, Height, Created, Edited FROM dbo.Jedi WHERE Name LIKE '%'+@Name+'%'";
+
 
 
             //using (var connection = new SqlConnection(connectionString))
             using (var connection = new SqlConnection(_starwarsConfig.StarwarsConnectionString))
             {
                 var command = new SqlCommand(QUERY_SQL_JEDI_GET_ALL, connection);
+                //command.Connection = connection;
+                //command.CommandText = QUERY_SQL_JEDI_GET_ALL;
+                command.CommandType = System.Data.CommandType.Text;
+
                 //command.Parameters.AddWithValue("@Name", filter.Name);
 
 
@@ -51,15 +56,18 @@ namespace Starwars.Core.DataADONet
 
                         jedi.JediId = reader.GetInt32(0);
                         jedi.Name = reader[1].ToString();
-                        jedi.Height = reader.GetInt32(2); //Null
-                        jedi.Created = reader.GetDateTime(3);
-                        jedi.Created = reader.GetDateTime(4);
+
+
+                        //jedi.Height = reader.GetInt32(2); //Null
+                        //jedi.Created = reader.GetDateTime(3);
+                        //jedi.Created = reader.GetDateTime(4);
 
 
                         jedis.Add(jedi);
                     }
 
                     reader.Close();
+
                 }
                 catch (SqlException ex)
                 {
