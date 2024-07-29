@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35118.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starwars.App.ConsoleApp", "Starwars.App.ConsoleApp\Starwars.App.ConsoleApp.csproj", "{0563C3AF-8442-4E68-941D-C7896B86E8BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Entities", "Starwars.Core.Entities\Starwars.Core.Entities.csproj", "{C286E92D-A0F6-4CDF-958B-0555AA0C4B8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Data", "Starwars.Core.Data\Starwars.Core.Data.csproj", "{80D8747A-433C-41A7-BDAF-52F4B48E68DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.Core.Business", "Starwars.Core.Business\Starwars.Core.Business.csproj", "{5F0C4B44-BE46-46E5-A1B6-EDB4CAC86F59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{FB3DEEE8-53E1-4A56-879F-7E181B37EA86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9D8ED9AD-7212-456B-8538-3FE53375495C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starwars.App.WebMvcApp", "Starwars.App.WebMvcApp\Starwars.App.WebMvcApp.csproj", "{1063DD4F-41EE-40D2-A06C-A6311705113E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0563C3AF-8442-4E68-941D-C7896B86E8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0563C3AF-8442-4E68-941D-C7896B86E8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0563C3AF-8442-4E68-941D-C7896B86E8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0563C3AF-8442-4E68-941D-C7896B86E8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C286E92D-A0F6-4CDF-958B-0555AA0C4B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C286E92D-A0F6-4CDF-958B-0555AA0C4B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C286E92D-A0F6-4CDF-958B-0555AA0C4B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C286E92D-A0F6-4CDF-958B-0555AA0C4B8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D8747A-433C-41A7-BDAF-52F4B48E68DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D8747A-433C-41A7-BDAF-52F4B48E68DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D8747A-433C-41A7-BDAF-52F4B48E68DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D8747A-433C-41A7-BDAF-52F4B48E68DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F0C4B44-BE46-46E5-A1B6-EDB4CAC86F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F0C4B44-BE46-46E5-A1B6-EDB4CAC86F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F0C4B44-BE46-46E5-A1B6-EDB4CAC86F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F0C4B44-BE46-46E5-A1B6-EDB4CAC86F59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1063DD4F-41EE-40D2-A06C-A6311705113E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1063DD4F-41EE-40D2-A06C-A6311705113E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1063DD4F-41EE-40D2-A06C-A6311705113E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1063DD4F-41EE-40D2-A06C-A6311705113E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0563C3AF-8442-4E68-941D-C7896B86E8BB} = {FB3DEEE8-53E1-4A56-879F-7E181B37EA86}
+		{C286E92D-A0F6-4CDF-958B-0555AA0C4B8F} = {9D8ED9AD-7212-456B-8538-3FE53375495C}
+		{80D8747A-433C-41A7-BDAF-52F4B48E68DD} = {9D8ED9AD-7212-456B-8538-3FE53375495C}
+		{5F0C4B44-BE46-46E5-A1B6-EDB4CAC86F59} = {9D8ED9AD-7212-456B-8538-3FE53375495C}
+		{1063DD4F-41EE-40D2-A06C-A6311705113E} = {FB3DEEE8-53E1-4A56-879F-7E181B37EA86}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {667742DE-4165-4B28-9CD1-E4E93403508A}
+	EndGlobalSection
+EndGlobal
