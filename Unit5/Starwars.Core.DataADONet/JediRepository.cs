@@ -3,6 +3,7 @@
 using Microsoft.Data.SqlClient;
 using Starwars.Core.Entities;
 using Starwars.Core.Entities.Filters;
+using System.Data;
 
 namespace Starwars.Core.DataADONet
 {
@@ -24,14 +25,19 @@ namespace Starwars.Core.DataADONet
 
             var jedis = new List<Jedi>();
 
-            const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, Name FROM dbo.Jedi";
+            const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, Name, Birthday FROM dbo.Jedi";
             //const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, Name, Height, Created, Edited FROM dbo.Jedi WHERE Name LIKE '%'+@Name+'%'";
 
 
+            //var conn2 = new SqlConnection();
+            //conn2.Open();
+            //conn2.Close();
 
             //using (var connection = new SqlConnection(connectionString))
-            using (var connection = new SqlConnection(_starwarsConfig.StarwarsConnectionString))
+            using (var connection = new Microsoft.Data.SqlClient.SqlConnection(_starwarsConfig.StarwarsConnectionString))
             {
+                
+
                 var command = new SqlCommand(QUERY_SQL_JEDI_GET_ALL, connection);
                 //command.Connection = connection;
                 //command.CommandText = QUERY_SQL_JEDI_GET_ALL;
@@ -51,11 +57,16 @@ namespace Starwars.Core.DataADONet
                         var jedi = new Jedi();
 
                         var jediId = reader.GetInt32(0);
+
                         var nameDemo1 = reader[1].ToString();
                         var nameDemo2 = reader.GetString(1);
 
+                        var birthday1 = reader.GetDateTime(2);
+                        var birthday2 = reader.GetDateTime(reader.GetOrdinal("Birthday"));
+
                         jedi.JediId = reader.GetInt32(0);
                         jedi.Name = reader[1].ToString();
+                        jedi.Birthday = birthday2;
 
 
                         //jedi.Height = reader.GetInt32(2); //Null
@@ -86,6 +97,7 @@ namespace Starwars.Core.DataADONet
 
             return jedis;
         }
+
 
         public List<Jedi> Search(JediFilter filter) { 
 

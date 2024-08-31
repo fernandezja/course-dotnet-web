@@ -6,9 +6,16 @@ using Starwars.Core.Entities.Filters;
 
 //Init: Config
 var configuration = new ConfigurationBuilder()
-                            .AddJsonFile($"appSettings.json");
+                        .AddJsonFile($"appSettings.json");
 
 var config = configuration.Build();
+
+var title1 = config["Title"];
+var title2 = config.GetSection("Title");
+
+var connectionString1 = config.GetSection("ConnectionStrings:StarwarsConnectionString");
+
+
 var connectionString = config.GetConnectionString("StarwarsConnectionString");
 
 var starwarsConfig = new StarwarsConfig();
