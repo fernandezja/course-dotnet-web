@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Starwars.Apps.WebAppMvc.Models;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Starwars.Core.Business;
 using Starwars.Core.Entities;
 
-namespace Starwars.Apps.WebAppMvc.Controllers
+namespace Starwars.Apps.WebAPI.Controllers
 {
-    public class JediController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class JediController : ControllerBase
     {
         private readonly StarwarsConfig _starwarsConfig;
         private readonly JediBusiness _jediBusiness;
@@ -23,21 +25,9 @@ namespace Starwars.Apps.WebAppMvc.Controllers
             //_jediBusiness = new JediBusiness(_starwarsConfig);
         }
 
-        public IActionResult Index()
-        {
-            var jedis = _jediBusiness.GetAll();
 
-            var model = new ResultadoPaginadoViewModel<Jedi>();
-            model.Titulo = "Listado de Jedis";
-            model.Items = jedis;    
-
-            return View(viewName:"Demo", 
-                        model: model);
-        }
-
-
-        [Route("superdetail/jedi-{id}.html")]
-        public IActionResult Details(int id)
+        [HttpGet("{id}")]
+        public Jedi Get(int id)
         {
             //TODO: Validar parametros
 
@@ -49,19 +39,8 @@ namespace Starwars.Apps.WebAppMvc.Controllers
                         where j.JediId == id
                         select j).FirstOrDefault();
 
-            /*
-            var jedi = new Jedi() {
-                JediId = id,
-                Name = "Yoda",
-                Created = DateTime.Now,
-                Edited = DateTime.Now,
-                Height = 120
-            };
-            */
-
-            //ViewBag.Jedi = jedi;
-
-            return View(jedi);
+            
+            return jedi;
         }
     }
 }

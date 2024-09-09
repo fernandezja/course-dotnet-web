@@ -11,6 +11,7 @@
     <div>
         <h4>@jedi.FirstName</h4>
         @*  <a href="/jedi/detail/@jedi.JediId">Ir al Detalle v1</a> *@
+        
         @Html.ActionLink("Ir al Detalle v2", "Details", "Jedi", new { Id = jedi.JediId })
         <p>JediId: @jedi.JediId</p>
     </div>

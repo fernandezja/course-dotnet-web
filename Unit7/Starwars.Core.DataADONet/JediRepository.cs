@@ -24,7 +24,9 @@ namespace Starwars.Core.DataADONet
 
             var jedis = new List<Jedi>();
 
-            const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, FirstName, LastName, Email FROM dbo.Jedi";
+
+            //const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, [Name], Birthday FROM dbo.Jedi";
+            const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, FirstName = J.[Name], LastName = '', Email = '' FROM dbo.Jedi J";
             //const string QUERY_SQL_JEDI_GET_ALL = @"SELECT JediId, Name, Height, Created, Edited FROM dbo.Jedi WHERE Name LIKE '%'+@Name+'%'";
 
 
