@@ -11,8 +11,22 @@ namespace Starwars.WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var demo1 = TextBox1.Text;
-            var name = txtName.Value;
+
+            if (!Page.IsPostBack)
+            {
+                var demo1 = TextBox1.Text;
+                var name = txtName.Value;
+
+                for (int i = 1; i <= 10; i++)
+                {
+                    panel1.Controls.Add(new TextBox());
+                }
+            }
+            
+
+            Session["Variable1"] = DateTime.Now;
+            ViewState["Variable1"] = DateTime.Now;
+            Application["Variable1"] = DateTime.Now;
         }
     }
 }

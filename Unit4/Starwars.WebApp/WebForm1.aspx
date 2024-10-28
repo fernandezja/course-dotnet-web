@@ -15,23 +15,33 @@
             <input type="text" name="txtName" id="txtName" runat="server" />
             <input type="text" name="txtEmail" id="txtEmail" runat="server" />
 
-            <br />
+            <hr />
             Coleccion de webcontrols mismo ID (no recomendado)
+
             <%
                 for (int i = 0; i < 10; i++)
                 {
                     %>
-                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                       
+
+                        <asp:TextBox ID="TextBox4" runat="server" ClientIDMode="AutoID"></asp:TextBox>
                     <%
                 }
 
             %>
+            Coleccion de webcontrols con Panel
+
+             <asp:Panel ID="panel1" runat="server">
+
+                </asp:Panel>
+
+            <hr />
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="Button1" runat="server" Text="Button 1" />
             <br />
-               <asp:Button ID="Button2" runat="server" Text="Button 2" />
+             <asp:Button ID="Button2" runat="server" Text="Button 2" />
             <br />
         </div>
 

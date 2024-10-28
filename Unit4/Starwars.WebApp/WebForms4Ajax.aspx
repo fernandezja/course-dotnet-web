@@ -9,8 +9,9 @@
 <body>
     <h1>Ajax con ASP.NET Webforms</h1>
     <form id="form1" runat="server">
-                <asp:ScriptManager ID="ScriptManager1"  runat="server">
-            </asp:ScriptManager>
+        <asp:ScriptManager ID="ScriptManager1"  runat="server">
+        </asp:ScriptManager>
+
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <br />
         <br />
