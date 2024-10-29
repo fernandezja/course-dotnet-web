@@ -179,10 +179,12 @@ namespace Starwars.Core.DataADONet
                     {
                         var jedi = new Jedi();
                         jedi.JediId = reader.GetInt32(0);
-                        jedi.Name = reader[1].ToString();
-                        jedi.Height = reader.GetInt32(2); //Null
-                        jedi.Created = reader.GetDateTime(3);
-                        jedi.Created = reader.GetDateTime(4);
+                        //jedi.Name = reader[1].ToString();
+                        jedi.Name = reader.GetString(reader.GetOrdinal("Name"));
+
+                        //jedi.Height = reader.GetInt32(2); //Null
+                        //jedi.Created = reader.GetDateTime(3);
+                        //jedi.Created = reader.GetDateTime(4);
 
                         jedis.Add(jedi);
                     }
