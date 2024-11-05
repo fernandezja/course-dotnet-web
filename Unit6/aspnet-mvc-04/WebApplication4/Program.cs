@@ -20,8 +20,20 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
+//app.MapControllerRoute(
+//    name: "jedi-listado",
+//    pattern: "jedi/listado",
+//    new { controller = "Jedi", action = "Index" },
+//    constraints:
+//    );
+
+
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
 
 app.Run();

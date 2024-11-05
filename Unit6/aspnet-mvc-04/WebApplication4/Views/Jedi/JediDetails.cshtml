@@ -1,0 +1,13 @@
+﻿@model Starwars.Core.Entities.Jedi
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+Hola Jedi <strong>@Model.Name (@Model.JediId)</strong>
+<br />
+Ejemplo @Model.ToHtml 
+
+<br />
+Ejemplo @Html.Raw(Model.ToHtml)
