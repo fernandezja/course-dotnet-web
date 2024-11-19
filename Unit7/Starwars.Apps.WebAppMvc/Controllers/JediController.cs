@@ -63,5 +63,22 @@ namespace Starwars.Apps.WebAppMvc.Controllers
 
             return View(jedi);
         }
+
+
+        [HttpGet]
+        public IActionResult Create() {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Create([FromForm] Jedi jedi)
+        {
+            //TODO: Validar parametros
+            //Guardar en la DB
+
+            return RedirectToAction("Index");
+            //return View();
+        }
     }
 }

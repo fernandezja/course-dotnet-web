@@ -9,5 +9,13 @@
         //public int? Height { get; set; }
         //public DateTime Created { get; set; }
         //public DateTime Edited { get; set; }
+
+
+        public bool CanEdit
+        {
+            get {
+                return (JediId % 2 == 0);
+            }
+        }
     }
 }

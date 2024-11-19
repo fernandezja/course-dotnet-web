@@ -51,7 +51,8 @@ namespace Starwars.Core.DataADONet
                         var nameDemo1 = reader[1].ToString();
                         var nameDemo2 = reader.GetString(1);
 
-                        jedi.JediId = reader.GetInt32(0);
+                        //jedi.JediId = reader.GetInt32(0);
+                        jedi.JediId = reader.GetInt32(reader.GetOrdinal("JediId"));
                         jedi.FirstName = reader[1].ToString();
                         jedi.LastName = reader[2].ToString();
                         jedi.Email = reader[3].ToString();

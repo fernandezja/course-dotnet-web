@@ -2,7 +2,7 @@
 
 @{
     Layout = null;
-    
+
 }
 
 <!DOCTYPE html>
@@ -16,54 +16,65 @@
 
     @Html.Partial("CustomPartialView")
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @* @Html.DisplayNameFor(model => model.JediId) *@
-                #
-            </th>
-            <th>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @* @Html.DisplayNameFor(model => model.JediId) *@
+                    #
+                </th>
+                <th>
                     @*@Html.DisplayNameFor(model => model.FirstName)*@
                     First name
-            </th>
-            <th>
+                </th>
+                <th>
                     @*@Html.DisplayNameFor(model => model.LastName)*@
                     Last name
-            </th>
-            <th>
+                </th>
+                <th>
                     @* @Html.DisplayNameFor(model => model.Email)*@
                     Email
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Items) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.JediId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                <a asp-action="Details" asp-route-id="@item.JediId">Details</a> |
-                <a href="/demo...">Edit</a>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JediId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @if (item.CanEdit)
+                        {
+                            <text>
+                               
+                                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })
+                                |
+                                <a asp-action = "Details" asp-route-id="@item.JediId"> Details </a > |
+                                <a href = "/demo..."> Edit </a >
 
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
 
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                            </text>
+                        }else{
+                            <span>--</span>
+                        }     
+
+              
             </td>
         </tr>
 }
