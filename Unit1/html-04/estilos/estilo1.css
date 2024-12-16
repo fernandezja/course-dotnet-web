@@ -1,0 +1,28 @@
+html{
+    background-color: wheat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: blue;
+}
+
+p {
+    color: green;
+}
+
+cursonet {
+    color: red;
+}
+
+#parrafo1 {
+    color: fuchsia;
+}
+
+.fuente-roja{
+    color: red;
+}
+
+.fuente-tamanio-24{
+    font-size: 24px;
+}   
