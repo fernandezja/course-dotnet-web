@@ -1,0 +1,27 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<ul>
+    @foreach (var jedi in jedis)
+    {
+        <li>
+            @jedi.ToString()
+        </li>
+    }
+</ul>
+
+@code{
+
+    private List<Starwars.Core.Entidades.Jedi> jedis;
+
+    protected override async Task OnInitializedAsync()
+    {
+        jedis = new Starwars.Core.Negocio.JediNegocio().ObtenerTodos();
+
+    }
+}
