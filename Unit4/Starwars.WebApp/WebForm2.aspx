@@ -9,12 +9,18 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
             
             <asp:Button runat="server" 
                          Text="Enviar" 
                         ID="btnEnviar" 
                          OnClick="btnEnviar_Click"></asp:Button>
+            
+            <asp:RequiredFieldValidator runat="server"
+                ControlToValidate="txtName"
+                ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
         </div>
         <div class="">&nbsp;</div>
         <div class="">&nbsp;</div>
