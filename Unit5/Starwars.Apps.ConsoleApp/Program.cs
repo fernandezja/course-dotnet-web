@@ -5,7 +5,7 @@ using Starwars.Core.Entities;
 using Starwars.Core.Entities.Filters;
 
 //Init: Config
-var configuration = new ConfigurationBuilder()
+var configuration = new ConfigurationBuilder()                        
                         .AddJsonFile($"appSettings.json");
 
 var config = configuration.Build();
@@ -19,34 +19,36 @@ var connectionString1 = config.GetSection("ConnectionStrings:StarwarsConnectionS
 var connectionString = config.GetConnectionString("StarwarsConnectionString");
 
 var starwarsConfig = new StarwarsConfig();
+starwarsConfig.Title = title1;
 starwarsConfig.StarwarsConnectionString = connectionString;
 
 
-Console.WriteLine("Stawars!");
+Console.WriteLine("Starwars!");
 
 PrintLine();
 
 var jediBusiness = new JediBusiness(starwarsConfig);
 
-var jedis1 = jediBusiness.GetAll();
+//var jedis1 = jediBusiness.GetAll();
 
-Console.WriteLine($"[GetAll] Jedis Total = {jedis1.Count()}");
+//Console.WriteLine($"[GetAll] Jedis Total = {jedis1.Count()}");
 
 
-foreach (var j in jedis1)
+//foreach (var j in jedis1)
+//{
+//    Console.WriteLine($" |_ {j.Name}");
+//}
+
+
+//PrintLine();
+
+
+var filter = new JediFilter()
 {
-    Console.WriteLine($" |_ {j.Name}");
-}
+    Name = "0001"
+};
 
-
-PrintLine();
-
-
-//var filter = new JediFilter() { 
-//                Name = "0001" 
-//             };
-
-//var jedis2 = jediBusiness.Search(filter);
+var jedis2 = jediBusiness.Search(filter);
 
 //Console.WriteLine($"[Search] Jedis with a name contain \"0001\" Total = {jedis2.Count()}");
 
@@ -55,17 +57,17 @@ PrintLine();
 //    Console.WriteLine($" |_ {j.Name}");
 //}
 
-PrintLine();
+//PrintLine();
 
 
-//var jedis3 = jediBusiness.SearchWithStoreProcedure(filter);
+var jedis3 = jediBusiness.SearchWithStoreProcedure(filter);
 
-//Console.WriteLine($"[SearchWithStoreProcedure] Jedis with a name contain \"0001\" Total = {jedis3.Count()}");
+Console.WriteLine($"[SearchWithStoreProcedure] Jedis with a name contain \"0001\" Total = {jedis3.Count()}");
 
-//foreach (var j in jedis3)
-//{
-//    Console.WriteLine($" |_ {j.Name}");
-//}
+foreach (var j in jedis3)
+{
+    Console.WriteLine($" |_ {j.Name}");
+}
 
 PrintLine();
 

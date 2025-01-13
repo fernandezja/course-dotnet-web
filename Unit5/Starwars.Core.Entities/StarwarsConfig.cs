@@ -8,6 +8,7 @@ namespace Starwars.Core.Entities
 {
     public class StarwarsConfig
     {
+        public string Title { get; set; }
         public string StarwarsConnectionString { get; set; }
     }
 }
