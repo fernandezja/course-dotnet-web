@@ -61,12 +61,12 @@ namespace Starwars.Core.DataADONet
                         var nameDemo1 = reader[1].ToString();
                         var nameDemo2 = reader.GetString(1);
 
-                        var birthday1 = reader.GetDateTime(2);
-                        var birthday2 = reader.GetDateTime(reader.GetOrdinal("Birthday"));
+                        //var birthday1 = reader.GetDateTime(2);
+                        //var birthday2 = reader.GetDateTime(reader.GetOrdinal("Birthday"));
 
                         jedi.JediId = reader.GetInt32(0);
                         jedi.Name = reader[1].ToString();
-                        jedi.Birthday = birthday2;
+                        //jedi.Birthday = birthday2;
 
 
                         //jedi.Height = reader.GetInt32(2); //Null
