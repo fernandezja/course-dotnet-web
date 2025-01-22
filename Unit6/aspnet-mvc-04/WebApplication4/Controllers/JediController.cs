@@ -23,6 +23,7 @@ namespace WebApplication4.Controllers
         [Route("jedi-{id:int}.html")]
         public IActionResult Details(int id)
         {
+
             var jedi = new Jedi()
             {
                 JediId = id,
