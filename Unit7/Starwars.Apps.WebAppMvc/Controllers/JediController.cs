@@ -27,12 +27,16 @@ namespace Starwars.Apps.WebAppMvc.Controllers
         {
             var jedis = _jediBusiness.GetAll();
 
-            var model = new ResultadoPaginadoViewModel<Jedi>();
-            model.Titulo = "Listado de Jedis";
-            model.Items = jedis;    
+            var model = new ResultadoPaginadoViewModel<Jedi>
+            {
+                Titulo = "Listado de Jedis",
+                Items = jedis
+            };
 
-            return View(viewName:"Demo", 
-                        model: model);
+
+            return View(model.Items);
+            //return View(viewName: "Demo",
+            //            model: model);
         }
 
 
