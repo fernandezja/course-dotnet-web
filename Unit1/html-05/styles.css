@@ -1,0 +1,22 @@
+h1{
+    color: blue; 
+    
+}
+
+#myList{
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.list li{
+    background-color: lightgray; 
+    margin: 5px; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+.list.list-style li {
+    font-weight: bold; /* New style for list items */
+}
+.list.list-style li:hover {
+    background-color: yellow; /* Highlight on hover */
+}
