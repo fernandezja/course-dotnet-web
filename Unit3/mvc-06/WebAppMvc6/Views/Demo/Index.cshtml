@@ -1,0 +1,35 @@
+﻿@model WebAppMvc6.Models.Carrito
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var timeString = DateTime.Now.ToString("hh:mm:ss tt");
+}
+
+
+Hello <strong>@timeString</strong>
+
+<form method="POST" action="/demo/index">
+<select id="producto" name="producto">
+    <option>Silla</option>
+    <option>Sofa</option>
+</select>
+
+
+<input type="submit" value="enviar" />
+
+</form>
+
+@if (Model is not null)
+{
+    <text>
+        El producto seleccionado es:
+        @Model.Producto
+    </text>
+}
+else
+{
+    
+    <strong>No producto seleccionado</strong>
+}
