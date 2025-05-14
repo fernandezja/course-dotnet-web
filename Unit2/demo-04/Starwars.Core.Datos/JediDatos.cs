@@ -1,7 +1,7 @@
 ﻿using Starwars.Core.Entidades;
 
-namespace Starwars.Core.Datos
-{
+namespace Starwars.Core.Datos;
+
     public class JediDatos
     {
         public List<Jedi> ObtenerTodos()
@@ -19,4 +19,4 @@ namespace Starwars.Core.Datos
             return jedis; 
         }
     }
-}
+
