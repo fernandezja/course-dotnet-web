@@ -20,7 +20,7 @@
             
             <asp:RequiredFieldValidator runat="server"
                 ControlToValidate="txtName"
-                ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                ErrorMessage="El campo nombre es requerido"></asp:RequiredFieldValidator>
         </div>
         <div class="">&nbsp;</div>
         <div class="">&nbsp;</div>
