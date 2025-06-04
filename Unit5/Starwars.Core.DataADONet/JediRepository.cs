@@ -167,7 +167,9 @@ namespace Starwars.Core.DataADONet
                 command.Parameters.AddWithValue("@Name", filter.Name);
                 command.Parameters.AddWithValue("@PageIndex", filter.PageIndex);
                 command.Parameters.AddWithValue("@PageSize", filter.PageSize);
-             
+
+
+
 
                 try
                 {
