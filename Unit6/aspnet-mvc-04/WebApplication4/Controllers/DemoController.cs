@@ -7,7 +7,8 @@ namespace WebApplication4.Controllers
         public IActionResult Index()
         {
             //return Content(".NET Web");
-            return Content("<html><body>.NET <strong>Web<strong></body></html>", "text/html");
+            return Content(content: "<html><body>.NET <strong>Web<strong></body></html>", 
+                           contentType: "text/html");
         }
 
 
@@ -16,7 +17,8 @@ namespace WebApplication4.Controllers
         public IActionResult Demo3()
         {
             //return Content(".NET Web");
-            return Content("<html><body>.NET <strong>Web DEMO 3<strong></body></html>", "text/html");
+            return Content(content: "<html><body>.NET <strong>Web DEMO 3<strong></body></html>", 
+                           contentType: "text/html");
         }
     }
 }
