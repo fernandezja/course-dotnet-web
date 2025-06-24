@@ -23,6 +23,7 @@ namespace Starwars.Apps.WebAppMvc.Controllers
             //_jediBusiness = new JediBusiness(_starwarsConfig);
         }
 
+
         public IActionResult Index()
         {
             var jedis = _jediBusiness.GetAll();
@@ -34,9 +35,13 @@ namespace Starwars.Apps.WebAppMvc.Controllers
             };
 
 
-            return View(model.Items);
-            //return View(viewName: "Demo",
-            //            model: model);
+
+            //return View(model.Items);
+
+            //return View(model);
+
+            return View(viewName: "Demo",
+                        model: model);
         }
 
 

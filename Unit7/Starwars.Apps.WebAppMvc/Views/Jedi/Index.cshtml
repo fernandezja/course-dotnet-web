@@ -1,12 +1,15 @@
-﻿@model IEnumerable<Starwars.Core.Entities.Jedi>
+﻿@using Starwars.Core.Entities
+@* @model IEnumerable<Starwars.Core.Entities.Jedi> *@
+@model Starwars.Apps.WebAppMvc.Models.ResultadoPaginadoViewModel<Jedi>
 @{
-    ViewData["Title"] = "Jedi";
-}
+    //ViewData["Title"] = "Jedi
+    ViewData["Title"] = Model.Titulo;
+    }
 
 <h1>Index</h1>
 
 
-@foreach(var jedi in Model)
+@foreach(var jedi in Model.Items)
 {
     <div>
         <h4>@jedi.FirstName</h4>
